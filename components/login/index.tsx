@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { View, Image, Alert } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Screens } from '@constants/Screens'
 import styles from './styles'
 import { getTexts } from '@translations/TranslationHelper'
 import { DEFAULT_LANGUAGE_CODE } from '@constants/Constants'
@@ -11,15 +13,14 @@ import Waves from '@components/commonUI/Waves'
 import { GoogleIcon, FacebookIcon } from '@components/commonUI/SocialIcons'
 
 const Login: React.FC = () => {
+    const navigation = useNavigation<any>()
     const t = getTexts(DEFAULT_LANGUAGE_CODE)
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleLogin = async () => {
-        // Handle login logic
-   
-  };
-    
+    const handleLogin = () => {
+        navigation.navigate(Screens.MAIN_TABS)
+    }
 
     const handleForgotPassword = () => {
         // Handle forgot password logic

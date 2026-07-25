@@ -14,6 +14,23 @@
             "continueWithFacebook": "Continue with Facebook",
             "dontHaveAccount": "Don't have an account?",
             "signUp": "Sign Up"
+        },
+        "tabs": {
+            "home": "Home",
+            "party": "Party",
+            "goLive": "Go Live",
+            "chats": "Chats",
+            "profile": "Profile"
+        },
+        "home": {
+            "stream": "Stream",
+            "hot": "Hot",
+            "follow": "Follow",
+            "followButton": "+ Follow"
+        },
+        "common": {
+            "comingSoon": "Coming Soon 🚀",
+            "comingSoonSubtitle": "We are working hard to bring this feature to you soon!"
         }
     }
 }

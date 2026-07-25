@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     },
     forgotPasswordContainer: {
         alignSelf: 'flex-end',
-        marginTop: getHeight(-8),
+        marginTop: getHeight(4),
         marginBottom: getHeight(spacing.inputPaddingBig),
     },
     forgotPasswordText: {
-        fontSize: fontSizes.bodyTextMedium,
+        fontSize: getHeight(fontSizes.bodyTextMedium),
         color: colors.forgotPasswordText,
         fontWeight: '300',
         textDecorationLine: 'underline',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         flexShrink: 0,
     },
     socialButtonsContainer: {
-        marginBottom: getHeight(16),
+        marginBottom: getHeight(12),
     },
     socialButtonMargin: {
         marginBottom: getHeight(12),
