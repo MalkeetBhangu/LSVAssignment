@@ -17,7 +17,17 @@ const Login: React.FC = () => {
 
     const handleLogin = async () => {
         // Handle login logic
-    try {
+   
+  };
+    
+
+    const handleForgotPassword = () => {
+        // Handle forgot password logic
+    }
+
+    const handleGoogleLogin = async() => {
+        // Handle Google login
+         try {
       const userCredential = await signInWithGoogle();
 
       console.log(userCredential.user);
@@ -31,15 +41,6 @@ const Login: React.FC = () => {
             const message = error instanceof Error ? error.message : 'Google Login Failed';
             Alert.alert('Google Login Failed', message);
     }
-  };
-    
-
-    const handleForgotPassword = () => {
-        // Handle forgot password logic
-    }
-
-    const handleGoogleLogin = () => {
-        // Handle Google login
     }
 
     const handleFacebookLogin = () => {
