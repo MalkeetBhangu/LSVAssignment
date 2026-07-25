@@ -1,20 +1,36 @@
 import React, { useState } from 'react'
-import { View, Image } from 'react-native'
+import { View, Image, Alert } from 'react-native'
 import styles from './styles'
 import { getTexts } from '@translations/TranslationHelper'
 import { DEFAULT_LANGUAGE_CODE } from '@constants/Constants'
 import TextView from '@components/commonUI/TextView'
 import TextInput from '@components/commonUI/TextInput'
 import Button from '@components/commonUI/Button'
+import { signInWithGoogle } from 'config/google'
 
 const Login: React.FC = () => {
     const t = getTexts(DEFAULT_LANGUAGE_CODE)
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         // Handle login logic
+    try {
+      const userCredential = await signInWithGoogle();
+
+      console.log(userCredential.user);
+
+      Alert.alert(
+        'Success',
+        `Welcome ${userCredential.user.displayName}`,
+      );
+    } catch (error) {
+      console.log(error);
+            const message = error instanceof Error ? error.message : 'Google Login Failed';
+            Alert.alert('Google Login Failed', message);
     }
+  };
+    
 
     const handleForgotPassword = () => {
         // Handle forgot password logic
