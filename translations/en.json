@@ -1,0 +1,19 @@
+{
+    "translation": {
+        "login": {
+            "welcomeText": "Welcome back!👋",
+            "welcomeSubtitle": "Sign in to continue your live streaming journey.",
+            "emailOrPhoneLabel": "Email ID or Phone Number",
+            "emailOrPhonePlaceholder": "Enter Registered Email or Phone No.",
+            "passwordLabel": "Password",
+            "passwordPlaceholder": "Enter your password",
+            "forgotPassword": "Forgot Password?",
+            "loginButton": "Login",
+            "orContinueWith": "or continue with",
+            "continueWithGoogle": "Continue with Google",
+            "continueWithFacebook": "Continue with Facebook",
+            "dontHaveAccount": "Don't have an account?",
+            "signUp": "Sign Up"
+        }
+    }
+}

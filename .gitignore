@@ -1,0 +1,27 @@
+node_modules
+
+
+# CocoaPods
+**/Pods/
+/ios/assets/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Bundler
+/vendor/bundle/
+.bundle/
+
+# Ruby
+*.gem
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+release
+debug
