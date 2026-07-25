@@ -74,7 +74,7 @@ const TextInput: React.FC<TextInputProps> = ({ label, error, rightIcon, onRightI
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        marginBottom: spacing.componentDistance,
+        marginBottom: spacing.inputPadding,
     },
     label: {
         fontSize: fontSizes.bodyTextMedium,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colors.inputBackground,
         borderRadius: radius.input,
-        height: getHeight(50),
+        height: getHeight(55),
         paddingHorizontal: spacing.sideMargin,
     },
     inputContainerError: {
@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
         fontSize: fontSizes.bodyTextMedium,
         color: colors.inputText,
         fontWeight: '200',
-        paddingVertical: 0,
     },
     rightIconContainer: {
         paddingLeft: spacing.marginSmall,
