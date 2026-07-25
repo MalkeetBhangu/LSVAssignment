@@ -14,8 +14,8 @@ const IOS_CLIENT_ID =
   '61815331485-hm20me4o4uhiv20rjdhff3615101t4d1.apps.googleusercontent.com';
 
 export function configureGoogle(options?: { webClientId?: string; iosClientId?: string }) {
-  const webClientId = options?.webClientId ?? DEFAULT_WEB_CLIENT_ID;
-  const iosClientId = options?.iosClientId ?? IOS_CLIENT_ID;
+  const webClientId =  DEFAULT_WEB_CLIENT_ID;
+  const iosClientId =  IOS_CLIENT_ID;
 
   GoogleSignin.configure({
     webClientId,
