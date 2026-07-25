@@ -9,7 +9,7 @@ interface IconProps {
 export const HomeIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path
-            d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+            d="M12 3C7.8 3 4.5 6.3 4.5 10.8V18.5C4.5 19.9 5.6 21 7 21H17C18.4 21 19.5 19.9 19.5 18.5V10.8C19.5 6.3 16.2 3 12 3Z"
             fill={color}
         />
     </Svg>
@@ -18,15 +18,27 @@ export const HomeIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) 
 export const PartyIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path
-            d="M4.5 19.5l15-15M7 17l2 2M10 14l2 2M13 11l2 2M5 8l-2 2 4 4 2-2M14 3l-1.5 4.5L17 12l4.5-1.5L14 3z"
+            d="M4.5 21L12.2 9.8L14.8 12.4L4.5 21Z"
             stroke={color}
-            strokeWidth="2"
+            strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
-        <Circle cx="18" cy="5" r="1" fill={color} />
-        <Circle cx="13" cy="7" r="1" fill={color} />
-        <Circle cx="20" cy="10" r="1" fill={color} />
+        <Path
+            d="M8.5 15.2C9.5 14.2 11.2 14.2 12.2 15"
+            stroke={color}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+        />
+        <Circle cx="15.5" cy="5.5" r="1.2" fill={color} />
+        <Circle cx="19.5" cy="9.5" r="1.5" fill={color} />
+        <Circle cx="20.5" cy="4.5" r="1" fill={color} />
+        <Path
+            d="M13.5 8.5C15.5 7 17.5 7.5 18.5 6.5"
+            stroke={color}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+        />
     </Svg>
 )
 
@@ -45,17 +57,29 @@ export const GoLiveIcon: React.FC<IconProps> = ({ color = '#00A638', size = 26 }
 export const ChatsIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path
-            d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-            fill={color}
+            d="M21.5 3.5L2 11.5L10 14.5L18.5 6.5L10.5 15L10 21L14 16.5L19.5 19L21.5 3.5Z"
+            stroke={color}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         />
     </Svg>
 )
 
 export const ProfileIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <Circle
+            cx="12"
+            cy="8"
+            r="4.2"
+            stroke={color}
+            strokeWidth="1.8"
+        />
         <Path
-            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-            fill={color}
+            d="M4.5 20C4.5 16.1 7.9 13 12 13C16.1 13 19.5 16.1 19.5 20"
+            stroke={color}
+            strokeWidth="1.8"
+            strokeLinecap="round"
         />
     </Svg>
 )

@@ -52,7 +52,7 @@ const Login: React.FC = () => {
                     <TextInput label={t.login.emailOrPhoneLabel} placeholder={t.login.emailOrPhonePlaceholder} value={emailOrPhone} onChangeText={setEmailOrPhone} keyboardType="email-address" autoCapitalize="none" />
                     <TextInput label={t.login.passwordLabel} placeholder={t.login.passwordPlaceholder} value={password} onChangeText={setPassword} isPassword />
                     <View style={styles.forgotPasswordContainer}>
-                        <TextView style={styles.forgotPasswordText} text={t.login.forgotPassword} onPress={handleForgotPassword} />
+                        <TextView style={styles.forgotPasswordText} text={`${t.login.forgotPassword} `} onPress={handleForgotPassword} />
                     </View>
                     <Button title={t.login.loginButton} onPress={handleLogin} />
                 </View>

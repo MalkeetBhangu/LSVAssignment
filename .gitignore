@@ -25,3 +25,4 @@ local.properties
 *.iml
 release
 debug
+android/app/.cxx/

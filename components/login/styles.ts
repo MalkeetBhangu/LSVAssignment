@@ -14,13 +14,14 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
+        justifyContent: 'flex-start',
     },
     bottomSection: {
         width: '100%',
         justifyContent: 'flex-end',
     },
     imageWrapper: {
-        marginBottom: getHeight(spacing.sideMarginMedium),
+        marginBottom: getHeight(20),
         borderRadius: radius.large,
         shadowColor: colors.black,
         shadowOffset: {
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
         height: getHeight(64),
     },
     topSection: {
-        paddingTop: getHeight(spacing.componentGroupDistance),
+        paddingTop: getHeight(16),
         alignItems: 'center',
     },
     welcomeTitle: {
@@ -45,14 +46,14 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         color: colors.textPrimary,
         textAlign: 'center',
-        marginBottom: getHeight(spacing.marginSmall),
+        marginBottom: getHeight(5),
     },
     welcomeSubtitle: {
         fontSize: getHeight(fontSizes.bodyTextMedium),
         fontWeight: '200',
         color: colors.textPrimary,
         textAlign: 'center',
-        marginBottom: getHeight(spacing.componentGroupDistance),
+        marginBottom: getHeight(16),
     },
     middleSection: {
         paddingHorizontal: spacing.spaceM,
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     forgotPasswordContainer: {
         alignSelf: 'flex-end',
         marginTop: getHeight(4),
-        marginBottom: getHeight(spacing.inputPaddingBig),
+        marginBottom: getHeight(14),
     },
     forgotPasswordText: {
         fontSize: getHeight(fontSizes.bodyTextMedium),

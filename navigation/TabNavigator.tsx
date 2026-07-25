@@ -29,7 +29,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, navigat
         { name: TABS.PROFILE_TAB, label: t.tabs.profile, icon: ProfileIcon },
     ]
 
-    const TAB_BAR_HEIGHT = getHeight(90)
+    const TAB_BAR_HEIGHT = getHeight(80)
 
     return (
         <View style={[styles.tabBarWrapper, { height: TAB_BAR_HEIGHT }]}>
@@ -44,7 +44,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, navigat
                         </LinearGradient>
                     </Defs>
                     <Path
-                        d="M 0,0 L 142,0 C 156,0 162,36 187.5,36 C 213,36 219,0 233,0 L 375,0 L 375,90 L 0,90 Z"
+                        d="M 0,0 L 144,0 C 158,0 164,24 187.5,24 C 211,24 217,0 231,0 L 375,0 L 375,90 L 0,90 Z"
                         fill="url(#tabGrad)"
                     />
                 </Svg>
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     },
     centerButton: {
         position: 'absolute',
-        top: getHeight(-25),
+        top: getHeight(-37),
         alignSelf: 'center',
         zIndex: 10,
     },
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
         elevation: 6,
     },
     centerSpace: {
-        height: getHeight(22),
+        height: getHeight(10),
     },
     tabRow: {
         flexDirection: 'row',
@@ -176,16 +176,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     tabLabel: {
-        fontSize: getHeight(12),
+        fontSize: getHeight(11),
         marginTop: getHeight(4),
     },
     tabLabelActive: {
         color: colors.white,
-        fontWeight: '700',
+        fontWeight: '400',
     },
     tabLabelInactive: {
         color: colors.tabIconInactive,
-        fontWeight: '400',
+        fontWeight: '200',
     },
 })
 

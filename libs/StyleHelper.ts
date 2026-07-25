@@ -1,15 +1,8 @@
-import { isDeviceTranslucent } from '@constants/Constants'
-import { Dimensions, Platform, StatusBar } from 'react-native'
-import { initialWindowSafeAreaInsets } from 'react-native-safe-area-context'
-
-const getStatusBarHeight = () => {
-    const bottomInset = initialWindowSafeAreaInsets?.bottom ?? 0
-    return Platform.OS === 'android' ? (StatusBar.currentHeight ?? 0) + bottomInset || 0 : 0
-}
+import { Dimensions } from 'react-native'
 
 const getWindowSize = () => {
     const { width, height } = Dimensions.get('window')
-    return { windowWidth: width, windowHeight: isDeviceTranslucent ? height - getStatusBarHeight() : height }
+    return { windowWidth: width, windowHeight: height }
 }
 export const getFigmaBase = () => {
     return { width: 376, height: 812 }

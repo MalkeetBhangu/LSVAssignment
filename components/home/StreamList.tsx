@@ -32,10 +32,9 @@ const StreamList: React.FC<StreamListProps> = ({ onPressItem, onPressFollow }) =
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.listContent}
                 columnWrapperStyle={styles.columnWrapper}
-                initialNumToRender={6}
+                initialNumToRender={2}
                 maxToRenderPerBatch={8}
                 windowSize={5}
-                removeClippedSubviews={true}
             />
         </View>
     )
