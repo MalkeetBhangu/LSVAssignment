@@ -23,7 +23,7 @@ const navigationTheme = {
 const Navigation: React.FC = () => {
     return (
         <NavigationContainer theme={navigationTheme}>
-            <MainStack.Navigator screenOptions={{ headerShown: false }}>
+            <MainStack.Navigator screenOptions={{ headerShown: false, navigationBarHidden: true }}>
                 <MainStack.Screen name={LOGIN} component={Login} />
             </MainStack.Navigator>
         </NavigationContainer>

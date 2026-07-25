@@ -1,16 +1,13 @@
 import React, { useMemo } from 'react'
-import { Pressable, PressableProps, StyleSheet, Text, TextStyle, ViewStyle, StyleProp, } from 'react-native'
+import { Pressable, PressableProps, StyleSheet, Text, TextStyle, ViewStyle, StyleProp, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import colors from '@tokens/Colors'
 import gradients from '@tokens/Gradients'
 import fontSizes from '@tokens/FontSizes'
 import radius from '@tokens/Radius'
-import { getHeight } from 'libs/StyleHelper'
+import { getHeight, getWidth } from 'libs/StyleHelper'
 
-// Currently using 'primary' variant. Additional variants (e.g. 'secondary', 'outline') can be added here in the future.
-type ButtonVariant = 'primary'
-
-// Currently using standard size. Additional sizes (e.g. 'S', 'L') can be added here in the future.
+type ButtonVariant = 'primary' | 'social'
 type ButtonSize = 'M'
 
 export interface ButtonProps extends Omit<PressableProps, 'style'> {
@@ -18,26 +15,28 @@ export interface ButtonProps extends Omit<PressableProps, 'style'> {
     isDisabled?: boolean
     variant?: ButtonVariant
     size?: ButtonSize
+    leftIcon?: React.ReactNode
     style?: StyleProp<ViewStyle>
     textStyle?: StyleProp<TextStyle>
 }
 
 /**
  * Dynamic style generator for Button.
- * Switch statements currently handle default size ('M') and variant ('primary') and can be expanded in the future.
  */
-const getButtonStyles = ({ size = 'M', variant = 'primary', isDisabled = false, }: { size?: ButtonSize, variant?: ButtonVariant, isDisabled?: boolean }) => {
+const getButtonStyles = ({ size = 'M', variant = 'primary', isDisabled = false }: { size?: ButtonSize; variant?: ButtonVariant; isDisabled?: boolean }) => {
     const { buttonHeight, buttonFontSize } = (() => {
         switch (size) {
             case 'M':
             default:
-                return { buttonHeight: getHeight(50), buttonFontSize: getHeight(fontSizes.buttonMedium) }
+                return { buttonHeight: getHeight(55), buttonFontSize: getHeight(fontSizes.buttonMedium) }
         }
     })()
 
     const buttonBackgroundColor = () => {
         if (isDisabled) return colors.inputBackground
         switch (variant) {
+            case 'social':
+                return colors.white
             case 'primary':
             default:
                 return colors.primaryGreen
@@ -47,6 +46,8 @@ const getButtonStyles = ({ size = 'M', variant = 'primary', isDisabled = false, 
     const buttonTextColor = () => {
         if (isDisabled) return colors.textMuted
         switch (variant) {
+            case 'social':
+                return colors.textPrimary
             case 'primary':
             default:
                 return colors.white
@@ -56,38 +57,57 @@ const getButtonStyles = ({ size = 'M', variant = 'primary', isDisabled = false, 
     const buttonBorderColor = () => {
         if (isDisabled) return colors.inputBorder
         switch (variant) {
+            case 'social':
             case 'primary':
             default:
                 return 'transparent'
         }
     }
 
-    const containerStyle: ViewStyle = { height: buttonHeight, backgroundColor: buttonBackgroundColor(), borderColor: buttonBorderColor(), borderWidth: 0, }
-    const textStyle: TextStyle = { color: buttonTextColor(), fontSize: buttonFontSize, }
+    const containerStyle: ViewStyle = {
+        height: buttonHeight,
+        backgroundColor: buttonBackgroundColor(),
+        borderColor: buttonBorderColor(),
+        borderWidth: 0,
+    }
+
+    const textStyle: TextStyle = {
+        color: buttonTextColor(),
+        fontSize: buttonFontSize,
+        fontWeight: variant === 'social' ? '600' : '400',
+    }
 
     return { containerStyle, textStyle }
 }
 
-export default function Button({ title, isDisabled = false, variant = 'primary', size, style, textStyle, ...props }: ButtonProps) {
+export default function Button({ title, isDisabled = false, variant = 'primary', size, leftIcon, style, textStyle, ...props }: ButtonProps) {
     const buttonStyles = useMemo(() => getButtonStyles({ size, variant, isDisabled }), [size, variant, isDisabled])
+
+    const renderContent = () => (
+        <View style={styles.contentRow}>
+            {leftIcon}
+            <Text style={[styles.text, buttonStyles.textStyle, leftIcon ? styles.textWithIcon : undefined, textStyle]}>{title}</Text>
+        </View>
+    )
+
     return (
         <Pressable
             {...props}
             disabled={isDisabled}
-            style={({ pressed }) => [styles.container, buttonStyles.containerStyle, isDisabled && styles.disabled, pressed && styles.pressed, style,]}
+            style={({ pressed }) => [styles.container, buttonStyles.containerStyle, isDisabled && styles.disabled, pressed && styles.pressed, style]}
             accessibilityRole="button"
         >
-            {!isDisabled ? (
+            {!isDisabled && variant === 'primary' ? (
                 <LinearGradient
                     colors={gradients.PRIMARY_BUTTON}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
                     style={styles.gradient}
                 >
-                    <Text style={[styles.text, buttonStyles.textStyle, textStyle]}>{title}</Text>
+                    {renderContent()}
                 </LinearGradient>
             ) : (
-                <Text style={[styles.text, buttonStyles.textStyle, textStyle]}>{title}</Text>
+                renderContent()
             )}
         </Pressable>
     )
@@ -108,9 +128,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: radius.button,
     },
+    contentRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     text: {
-        fontWeight: '400',
         textAlign: 'center',
+    },
+    textWithIcon: {
+        marginLeft: getWidth(10),
     },
     disabled: {
         opacity: 0.6,
