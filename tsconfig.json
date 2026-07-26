@@ -45,6 +45,27 @@
       ],
       "@assets/*": [
         "assets/*"
+      ],
+      "@libs/*": [
+        "libs/*"
+      ],
+      "@store/*": [
+        "store/*"
+      ],
+      "@repo/*": [
+        "repo/*"
+      ],
+      "@socialConfigs/*": [
+        "socialConfigs/*"
+      ],
+      "@localStorage/*": [
+        "localStorage/*"
+      ],
+      "@apiConfigs/*": [
+        "apiConfigs/*"
+      ],
+      "@apis/*": [
+        "apis/*"
       ]
     }
   },

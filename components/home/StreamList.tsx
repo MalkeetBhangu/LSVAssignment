@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import { View, StyleSheet, FlatList, ListRenderItem } from 'react-native'
 import StreamCardItem, { StreamItem } from './StreamCardItem'
-import { getHeight, getWidth } from 'libs/StyleHelper'
-import { useGetStreams } from 'apis/useGetStreams'
+import { getHeight, getWidth } from '@libs/StyleHelper'
+import { useGetStreams } from '@apis/useGetStreams'
 import colors from '@tokens/Colors'
 
 

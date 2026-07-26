@@ -8,11 +8,11 @@ import { DEFAULT_LANGUAGE_CODE } from '@constants/Constants'
 import TextView from '@components/commonUI/TextView'
 import TextInput from '@components/commonUI/TextInput'
 import Button from '@components/commonUI/Button'
-import { signInWithGoogle } from 'config/google'
+import { signInWithGoogle } from '@socialConfigs/google'
 import Waves from '@components/commonUI/Waves'
 import { GoogleIcon, FacebookIcon } from '@components/commonUI/SocialIcons'
 import { useUserState } from 'store/UseUserStore'
-import Loader from '@components/loader'
+import Loader from '@components/commonUI'
 
 const Login: React.FC = () => {
     const navigation = useNavigation<any>()

@@ -1,6 +1,6 @@
 import { StyleSheet, Platform, StatusBar } from 'react-native'
 import colors from '@tokens/Colors'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 import radius from '@tokens/Radius'
 
 const styles = StyleSheet.create({

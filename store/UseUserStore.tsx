@@ -1,4 +1,4 @@
-import { localStorage, STORAGE } from 'repo/Store'
+import { localStorage, STORAGE } from '@localStorage/Store'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import colors from '@tokens/Colors'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 import TextView from './TextView'
 import { getTexts } from '@translations/TranslationHelper'
 import { DEFAULT_LANGUAGE_CODE } from '@constants/Constants'

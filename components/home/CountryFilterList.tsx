@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react'
 import { View, StyleSheet, FlatList, Pressable, Text, ListRenderItem } from 'react-native'
 import colors from '@tokens/Colors'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 import TextView from '@components/commonUI/TextView'
-import { useGetCountries, DEFAULT_COUNTRIES } from 'apis/useGetCountries'
+import { useGetCountries, DEFAULT_COUNTRIES } from '@apis/useGetCountries'
 import fontSizes from '@tokens/FontSizes'
 
 export interface CountryItem {

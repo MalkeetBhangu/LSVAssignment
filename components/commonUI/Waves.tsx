@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Dimensions } from 'react-native'
 import Svg, { Path, Defs, LinearGradient, Stop } from 'react-native-svg'
-import { getHeight } from 'libs/StyleHelper'
+import { getHeight } from '@libs/StyleHelper'
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window')
 

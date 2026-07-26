@@ -1,4 +1,4 @@
-import { UserType } from '../store/UseUserStore'
+import { UserType } from '@store/UseUserStore'
 import { dataStorage } from './Store'
 
 type StorageObject = {

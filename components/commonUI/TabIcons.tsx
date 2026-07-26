@@ -1,3 +1,4 @@
+import colors from '@tokens/Colors'
 import React from 'react'
 import Svg, { Path, Circle } from 'react-native-svg'
 
@@ -6,7 +7,7 @@ interface IconProps {
     size?: number
 }
 
-export const HomeIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
+export const HomeIcon: React.FC<IconProps> = ({ color = colors.white, size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path
             d="M12 3C7.8 3 4.5 6.3 4.5 10.8V18.5C4.5 19.9 5.6 21 7 21H17C18.4 21 19.5 19.9 19.5 18.5V10.8C19.5 6.3 16.2 3 12 3Z"
@@ -15,7 +16,7 @@ export const HomeIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) 
     </Svg>
 )
 
-export const PartyIcon: React.FC<IconProps> = ({ color = '#FFFFFF', size = 24 }) => (
+export const PartyIcon: React.FC<IconProps> = ({ color = colors.white, size = 24 }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path
             d="M4.5 21L12.2 9.8L14.8 12.4L4.5 21Z"

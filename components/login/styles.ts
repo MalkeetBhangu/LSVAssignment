@@ -3,7 +3,7 @@ import colors from '@tokens/Colors'
 import fontSizes from '@tokens/FontSizes'
 import radius from '@tokens/Radius'
 import spacing from '@tokens/Spacing'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 
 
 const styles = StyleSheet.create({

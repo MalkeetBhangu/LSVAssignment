@@ -1,9 +1,9 @@
 import React from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import Navigation from './navigation';
+import Navigation from '@navigation';
 import colors from '@tokens/Colors';
-import { QueryClientProvider } from 'apiConfigs/QueryClientProvider';
+import { QueryClientProvider } from '@apiConfigs/QueryClientProvider';
 
 function App() {
 

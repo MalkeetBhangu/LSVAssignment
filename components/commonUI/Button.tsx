@@ -5,7 +5,7 @@ import colors from '@tokens/Colors'
 import gradients from '@tokens/Gradients'
 import fontSizes from '@tokens/FontSizes'
 import radius from '@tokens/Radius'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 
 type ButtonVariant = 'primary' | 'social'
 type ButtonSize = 'M'

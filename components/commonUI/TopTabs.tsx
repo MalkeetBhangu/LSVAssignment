@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Pressable } from 'react-native'
 import colors from '@tokens/Colors'
-import { getHeight, getWidth } from 'libs/StyleHelper'
+import { getHeight, getWidth } from '@libs/StyleHelper'
 import TextView from '@components/commonUI/TextView'
 import fontSizes from '@tokens/FontSizes'
 

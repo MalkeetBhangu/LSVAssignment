@@ -7,7 +7,7 @@ import TabNavigator from "./TabNavigator"
 import colors from "@tokens/Colors"
 import { enableFreeze } from "react-native-screens"
 import SplashScreen from "react-native-splash-screen"
-import { useUserState } from "store/UseUserStore"
+import { useUserState } from "@store/UseUserStore"
 
 const { LOGIN, MAIN_TABS } = Screens
 enableFreeze(true)

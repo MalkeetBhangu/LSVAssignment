@@ -14,7 +14,7 @@ import colors from '@tokens/Colors'
 import fontSizes from '@tokens/FontSizes'
 import radius from '@tokens/Radius'
 import spacing from '@tokens/Spacing'
-import { getHeight } from 'libs/StyleHelper'
+import { getHeight } from '@libs/StyleHelper'
 
 export interface TextInputProps extends RNTextInputProps {
     label?: string
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: spacing.sideMargin,
     },
     inputContainerError: {
-        borderColor: '#EF4444',
+        borderColor: colors.badgeRed,
         borderWidth: 1,
     },
     textInput: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     },
     errorText: {
         fontSize: fontSizes.bodyTextSmall,
-        color: '#EF4444',
+        color: colors.badgeRed,
         marginTop: 4,
     },
     pressed: {
