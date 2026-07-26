@@ -15,7 +15,7 @@ const DUMMY_STREAMS: StreamItem[] = Array.from({ length: 20 }, (_, i) => {
         'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80',
         'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80',
     ]
-    const names = ['Sofia Chen', 'Elena Rostova', 'Aria Tanaka', 'Mia Santos', 'Chloe Vance']
+    const names = ['Sofia Chen', 'Elena Rost', 'Aria Tanaka', 'Mia Santos', 'Chloe Vance']
     const flags = ['🇵🇭', '🇮🇳', '🇧🇷', '🇻🇳', '🇲🇽']
 
     return {

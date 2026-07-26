@@ -7,6 +7,7 @@ import TabNavigator from "./TabNavigator"
 import colors from "@tokens/Colors"
 import { enableFreeze } from "react-native-screens"
 import SplashScreen from "react-native-splash-screen"
+import { useUserState } from "store/UseUserStore"
 
 const { LOGIN, MAIN_TABS } = Screens
 enableFreeze(true)
@@ -23,13 +24,14 @@ const navigationTheme = {
 }
 
 const Navigation: React.FC = () => {
+    const { userData } = useUserState(['isLoggedIn'])
     const handleNavigationReady = useCallback(() => {
         SplashScreen.hide()
     }, [])
 
     return (
         <NavigationContainer theme={navigationTheme} onReady={handleNavigationReady}>
-            <MainStack.Navigator screenOptions={{ headerShown: false, navigationBarHidden: true }}>
+            <MainStack.Navigator initialRouteName={userData.isLoggedIn ? MAIN_TABS : LOGIN} screenOptions={{ headerShown: false, navigationBarHidden: true }}>
                 <MainStack.Screen name={LOGIN} component={Login} />
                 <MainStack.Screen name={MAIN_TABS} component={TabNavigator} />
             </MainStack.Navigator>

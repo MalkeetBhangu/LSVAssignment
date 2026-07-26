@@ -10,15 +10,18 @@ import TextInput from '@components/commonUI/TextInput'
 import Button from '@components/commonUI/Button'
 import Waves from '@components/commonUI/Waves'
 import { GoogleIcon, FacebookIcon } from '@components/commonUI/SocialIcons'
+import { useUserState } from 'store/UseUserStore'
 
 const Login: React.FC = () => {
     const navigation = useNavigation<any>()
     const t = getTexts(DEFAULT_LANGUAGE_CODE)
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [password, setPassword] = useState('')
+    const { userData, setUserData } = useUserState()
 
     const handleLogin = () => {
-        navigation.navigate(Screens.MAIN_TABS)
+        setUserData({ isLoggedIn: true })
+        navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
     }
 
     const handleForgotPassword = () => {
