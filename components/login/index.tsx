@@ -20,7 +20,7 @@ const Login: React.FC = () => {
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [password, setPassword] = useState('')
     const [googleLoading, setGoogleLoading] = useState(false)
-    const { userData, setUserData } = useUserState()
+    const { setUserData } = useUserState()
 
     const handleLogin = () => {
         setUserData({ isLoggedIn: true })
