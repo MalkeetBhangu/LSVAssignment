@@ -11,7 +11,7 @@ function App() {
     <QueryClientProvider>
       <SafeAreaProvider>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container} edges={['top']}>
           <Navigation />
         </SafeAreaView>
       </SafeAreaProvider>
