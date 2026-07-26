@@ -12,16 +12,19 @@ import { signInWithGoogle } from 'config/google'
 import Waves from '@components/commonUI/Waves'
 import { GoogleIcon, FacebookIcon } from '@components/commonUI/SocialIcons'
 import { useUserState } from 'store/UseUserStore'
+import Loader from '@components/loader'
 
 const Login: React.FC = () => {
     const navigation = useNavigation<any>()
     const t = getTexts(DEFAULT_LANGUAGE_CODE)
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [password, setPassword] = useState('')
+    const [googleLoading, setGoogleLoading] = useState(false)
     const { userData, setUserData } = useUserState()
 
     const handleLogin = () => {
-
+        setUserData({ isLoggedIn: true })
+        navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
     }
 
     const handleForgotPassword = () => {
@@ -29,17 +32,21 @@ const Login: React.FC = () => {
     }
 
     const handleGoogleLogin = async () => {
+        if (googleLoading) return
+        setGoogleLoading(true)
         try {
-            const userCredential = await signInWithGoogle();
+            const userCredential = await signInWithGoogle()
             setUserData({ isLoggedIn: true })
             navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
             Alert.alert(
                 t.login.successTitle,
                 `${t.login.welcomeUser} ${userCredential.user.displayName || ''}`,
-            );
+            )
         } catch (error) {
-            const message = error instanceof Error ? error.message : t.login.googleLoginFailedFallback;
-            Alert.alert(t.login.googleLoginFailedTitle, message);
+            const message = error instanceof Error ? error.message : t.login.googleLoginFailedFallback
+            Alert.alert(t.login.googleLoginFailedTitle, message)
+        } finally {
+            setGoogleLoading(false)
         }
     }
 
@@ -93,6 +100,7 @@ const Login: React.FC = () => {
                     </View>
                 </Waves>
             </View>
+            <Loader visible={googleLoading} />
         </View>
     )
 }
