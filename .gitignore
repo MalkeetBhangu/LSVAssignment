@@ -28,3 +28,6 @@ debug
 android/app/.cxx/
 .env
 android/app/alive.jks
+
+# add package-lock.json
+package-lock.json
