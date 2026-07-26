@@ -13,7 +13,17 @@
             "continueWithGoogle": "Continue with Google",
             "continueWithFacebook": "Continue with Facebook",
             "dontHaveAccount": "Don't have an account?",
-            "signUp": "Sign Up"
+            "signUp": "Sign Up",
+            "successTitle": "Success",
+            "welcomeUser": "Welcome",
+            "googleLoginFailedTitle": "Google Login Failed",
+            "googleLoginFailedFallback": "Google Login Failed",
+            "signInFlowNotComplete": "Google Sign-In flow did not complete successfully.",
+            "noTokenReceived": "Google Sign-In failed: No ID token or access token received. Check your webClientId and Android SHA1 configuration.",
+            "signInCancelled": "Google Sign-In was cancelled by the user.",
+            "signInInProgress": "Google Sign-In is already in progress.",
+            "playServicesNotAvailable": "Google Play Services is not available or needs to be updated.",
+            "unknownError": "Unknown Google Sign-In error."
         },
         "tabs": {
             "home": "Home",

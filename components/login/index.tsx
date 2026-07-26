@@ -21,30 +21,26 @@ const Login: React.FC = () => {
     const { userData, setUserData } = useUserState()
 
     const handleLogin = () => {
-        setUserData({ isLoggedIn: true })
-        navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
+
     }
 
     const handleForgotPassword = () => {
         // Handle forgot password logic
     }
 
-    const handleGoogleLogin = async() => {
-        // Handle Google login
-         try {
-      const userCredential = await signInWithGoogle();
-
-      console.log(userCredential.user);
-
-      Alert.alert(
-        'Success',
-        `Welcome ${userCredential.user.displayName}`,
-      );
-    } catch (error) {
-      console.log(error);
-            const message = error instanceof Error ? error.message : 'Google Login Failed';
-            Alert.alert('Google Login Failed', message);
-    }
+    const handleGoogleLogin = async () => {
+        try {
+            const userCredential = await signInWithGoogle();
+            setUserData({ isLoggedIn: true })
+            navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
+            Alert.alert(
+                t.login.successTitle,
+                `${t.login.welcomeUser} ${userCredential.user.displayName || ''}`,
+            );
+        } catch (error) {
+            const message = error instanceof Error ? error.message : t.login.googleLoginFailedFallback;
+            Alert.alert(t.login.googleLoginFailedTitle, message);
+        }
     }
 
     const handleFacebookLogin = () => {
