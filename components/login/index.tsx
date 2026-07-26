@@ -23,8 +23,7 @@ const Login: React.FC = () => {
     const { setUserData } = useUserState()
 
     const handleLogin = () => {
-        setUserData({ isLoggedIn: true })
-        navigation.reset({ index: 0, routes: [{ name: Screens.MAIN_TABS }] })
+        //Handle login of email and password
     }
 
     const handleForgotPassword = () => {
