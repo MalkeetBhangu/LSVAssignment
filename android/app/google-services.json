@@ -14,19 +14,19 @@
       },
       "oauth_client": [
         {
+          "client_id": "61815331485-742jm66mmpar3rajdjo48v3n0ag2v4vc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lvsassignment",
+            "certificate_hash": "c5ebc27c9c7f2dc98a00cc7a81aeceb77b7f2a50"
+          }
+        },
+        {
           "client_id": "61815331485-8i8gi8dbh5dv2pk3mv50u6ltq15t2297.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.lvsassignment",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
-          }
-        },
-        {
-          "client_id": "61815331485-b8v9jl750c8me7hvpv18odtqtdpmc5ev.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.lvsassignment",
-            "certificate_hash": "4ecd12f1d48b3820c21006221868e155cac81ded"
           }
         },
         {
@@ -45,6 +45,13 @@
             {
               "client_id": "61815331485-fh9hsuncjslb8ui2fikg20cnvdjs1uc6.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "61815331485-hm20me4o4uhiv20rjdhff3615101t4d1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lvsassignment"
+              }
             }
           ]
         }

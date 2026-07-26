@@ -27,3 +27,4 @@ release
 debug
 android/app/.cxx/
 .env
+android/app/alive.jks

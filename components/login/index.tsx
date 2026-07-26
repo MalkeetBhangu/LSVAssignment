@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Image, Alert } from 'react-native'
+import { View, Image, Alert, KeyboardAvoidingView, Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Screens } from '@constants/Screens'
 import styles from './styles'
@@ -59,7 +59,10 @@ const Login: React.FC = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.content}>
+            <KeyboardAvoidingView
+                style={styles.content}
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            >
                 <View style={styles.topSection}>
                     <View style={styles.imageWrapper}>
                         <Image source={require('@assets/images/logo.png')} style={styles.imageStyle} />
@@ -76,7 +79,7 @@ const Login: React.FC = () => {
                     </View>
                     <Button title={t.login.loginButton} onPress={handleLogin} />
                 </View>
-            </View>
+            </KeyboardAvoidingView>
 
             <View style={styles.bottomSection}>
                 <Waves>
