@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Image, Pressable } from 'react-native'
+import { View, Image, Alert } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Screens } from '@constants/Screens'
 import styles from './styles'
@@ -8,6 +8,7 @@ import { DEFAULT_LANGUAGE_CODE } from '@constants/Constants'
 import TextView from '@components/commonUI/TextView'
 import TextInput from '@components/commonUI/TextInput'
 import Button from '@components/commonUI/Button'
+import { signInWithGoogle } from 'config/google'
 import Waves from '@components/commonUI/Waves'
 import { GoogleIcon, FacebookIcon } from '@components/commonUI/SocialIcons'
 import { useUserState } from 'store/UseUserStore'
@@ -28,8 +29,22 @@ const Login: React.FC = () => {
         // Handle forgot password logic
     }
 
-    const handleGoogleLogin = () => {
+    const handleGoogleLogin = async() => {
         // Handle Google login
+         try {
+      const userCredential = await signInWithGoogle();
+
+      console.log(userCredential.user);
+
+      Alert.alert(
+        'Success',
+        `Welcome ${userCredential.user.displayName}`,
+      );
+    } catch (error) {
+      console.log(error);
+            const message = error instanceof Error ? error.message : 'Google Login Failed';
+            Alert.alert('Google Login Failed', message);
+    }
     }
 
     const handleFacebookLogin = () => {
